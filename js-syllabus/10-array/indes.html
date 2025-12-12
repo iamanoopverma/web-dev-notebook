@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        let fruits=["mango","orange","banana","grapes","apple"]
+        // console.log(fruits[0]);
+        // console.log(fruits[2]);
+        // console.log(fruits[4]);
+        let numbers=[5,10,15,20];
+        // console.log(numbers.length);
+        numbers.push(100);
+        numbers.pop();
+        numbers.unshift(4,2,3);
+        numbers.shift();
+        // console.log(numbers);
+        for(let i=0; i<numbers.length; i++){
+            // console.log(numbers[i]);
+        }
+        for(let item of numbers){
+            // console.log(item);
+        }
+        let squareValues = numbers.map(element => element * element);
+        let evenNumbers = numbers.filter( element => element % 2 === 0);
+        let sumOfNumbers = numbers.reduce(element => element += element)
+        for(let item of evenNumbers){
+            // console.log(item);
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

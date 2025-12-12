@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Practice Sheet</title>
+    <style>
+        .content {
+            color: blueviolet;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 70px 0 0 100px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script>
+        const content = document.querySelector('.content');
+        // Topic: Template Literals
+        // Print a poem in given in multi-line and store in a single variable.
+        let poem = `Twinkle, twinkle, little star,
+How I wonder what you are!
+Up above the world so high,
+Like a diamond in the sky.`
+
+        //write a function which can take tha name and display your name with greeting.
+        {
+            function nameWithGreeting(name) {
+                let greet = `"Welcome to the team, ${name}! We're excited to have you on board."`
+                console.log(greet);
+            }
+            // nameWithGreeting("Anoop Verma");
+        }
+        // write a string which can check you are adult or teenager 
+        {
+            let age = 18;
+            let checkMaturity = `Hello Dear, ${age >= 18 ? 'Congraltulations! You are an adult person' : 'Sorry you have to wait some months'}.`;
+            // console.log(checkMaturity)
+        }
+
+        // Topic: Extaracting Methods - Slice
+
+        // write a code which can extract string between 0th to 6th position inclusively using positive indexing.
+        {
+            let sentence = 'This is sentence.'
+            // console.log(sentence.slice(1, 1));
+        }
+
+        // write a code which can extract string between 0th to 6th position inclusively using negative indexing.
+        {
+            let sentence = 'approximately';
+            // console.log(sentence.slice(-6, -1));
+        }
+        // write a code which can ignore starting 6 elements in a string.
+        {
+            let sentence = 'Nonchalante';
+            // console.log(sentence.slice(6));
+        }
+
+        // write a code which can ignore last 6 elements in a string.
+        {
+            let sentence = 'Nonchalante';
+            // console.log(sentence.slice(0, sentence.length-6));
+        }
+
+        // write a code which can extract last 6 elements in a string.
+        {
+            let sentence = 'Nonchalante';
+            // console.log(sentence.slice(-6));
+        }
+
+        // write a code which can extract first 6 elements in a string.
+        {
+            let sentence = 'Nonchalante';
+            // console.log(sentence.substring(1,5));
+        }
+
+        // write a code which can extract first five element in a string.
+        {
+            let str = "Hello World";
+            // console.log(str.substr(-length,5));
+        }
+
+        // write a code which can check string are available in string.
+        {
+            let str = "Hello Guys";
+            // console.log(str.includes("Hello",0));
+        }
+
+        // write a code which can check the string strats from @ or not.
+
+        {
+            let str = "@gaurav";
+            // console.log(str.startsWith("@"));
+        }
+
+        // write a code which can check string are ended with .com or not.
+
+        {
+            let site = "my-syllabus.com";
+            // console.log(site.endsWith(".com"));
+        }
+
+        // write a code which can check first occurence index of substring in string.
+
+        {
+            let str = "hello this is indexOf method."
+            // console.log(str.indexOf("is")); 
+        }
+
+        // write a code which can check last occurence index of substring in string.
+
+        {
+            let str = "hello this is indexOf method."
+            // console.log(str.lastIndexOf("is")); 
+        }
+
+        {
+            let str = "hello this is replace method."
+            // console.log(str.replace("hello this is replace method.", "Hey")); 
+        }
+
+        {
+            let str = "He is mad. she is cute."
+            // console.log(str.replaceAll("is", "was"));
+        }
+
+        {
+            let str = "hello, hey, hi, what'sup";
+            // console.log(str.split(","));
+        }
+
+        {
+            let arr = ["hello", "hey", 'hi', "what'sup"];
+            // console.log(arr.join(" | ")); // hello | hey | hi | what'sup
+        }
+   
+
+  console.log(`${"anoop verma".toUpperCase()}`);
+
+
+
+    </script>
+</body>
+
+</html>
