@@ -27,3 +27,33 @@
     let i=1;      // ye variable block scopic hai.
    }
 ```
+
+### Lexical Scope
+Child function can access parent variables and parent can't access child's variable. This phenomenon is called Lexical Scope.
+```js
+function parent(){
+   let name = "Anoop";
+   console.log(address);    // Error
+   function child(){
+      let address = "Delhi";
+      console.log(name + address);    // Delhi Anoop
+   }
+}
+```
+
+### Closure
+When a function remembers his variables after returning, then it's called closure.
+
+```js
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+const increment = counter();
+increment(); // 1
+increment(); // 2
+increment(); // 3
+```

@@ -28,3 +28,74 @@ document.getElementById("child").addEventListener("click", (event) => {
   console.log("Child clicked");
 });
 ```
+
+#### Event Debouncing Problem
+Sometime, No matter how much time fire the event. we want that handler function run at the last event. 
+
+```js
+<input type="text">
+
+function debounce(fn, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn();
+    }, delay);
+  };
+}
+const search = debounce(() => {
+  console.log("API Call");
+}, 500);
+
+input.addEventListener("keyup", search);
+```
+
+#### Event Throttling Problem
+Sometime, No matter how much time fire the event. we want that handler function run once in decided time.
+
+```js
+function throttle(fn, limit) {
+  let flag = true;
+
+  return function () {
+    if (flag) {
+      fn();
+      flag = false;
+      setTimeout(() => {
+        flag = true;
+      }, limit);
+    }
+  };
+}
+const onScroll = throttle(() => {
+  console.log("Scroll handler");
+}, 1000);
+
+window.addEventListener("scroll", onScroll);
+```
+
+#### Event Delegation
+If we wanna run an event function on many element, then we attach event function on parent element.
+Even you will add dynamic element it runs on that element also.
+
+```js
+const container = document.getElementById("container");
+
+// For a particular class element 
+container.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn")) {
+    console.log("Button clicked:", e.target.innerText);
+  }
+});
+
+// For dynamic element
+container.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    alert(e.target.innerText);
+  }
+});
+const newBtn = document.createElement("button");
+newBtn.innerText = "New Button";
+container.appendChild(newBtn);
+```
