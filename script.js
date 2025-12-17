@@ -15,5 +15,5 @@ const chapterLink = document.querySelectorAll('.chapter-link');
                     });
             });
         });
-        chapterLink[0].click();
+        chapterLink[1].click();
 
