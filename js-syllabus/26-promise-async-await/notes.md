@@ -1,7 +1,7 @@
-## Promises | resolve, reject, chaining 
+## Promises | async & await
 
 ## Promise
-Promise is a object that represents work which is going to happen in future.
+A Promise is an object that handles a future result.
 ```js
 const promise = new Promise((resolve, reject) => {
   let success = true;
@@ -28,6 +28,7 @@ promise
 ```
 - then = It's handle resolve.
 - catch = It's handle reject.
+- Single catch can handle all errors.
 
 #### Promise Chaining
 - You can handle multiple async steps.
@@ -40,13 +41,26 @@ new Promise(resolve => {
 .then(num => num * 3)
 .then(final => console.log(final)); // 12
 ```
+## async & await
+- **async** - It makes function promise returning.
+- **await** - It stops the function till resolving the promise.
 
-#### Error Handling in Chaining
-Whenever error comes in chaining then nearest catch handle it.
 ```js
-new Promise((resolve, reject) => {
-  reject("Error occurred");
-})
-.then(res => console.log(res))
-.catch(err => console.log(err)); // Error occurred
+   async function getData(){
+    try{
+      const res = await fetch(url);
+      if(res.ok){
+        throw new Error("API Failed");
+      }
+      const data = await res.json();
+      console.log(data); 
+    }
+    catch(err){
+      console.log(err);
+    }
+   }
 ```
+
+**Note**:
+- You can use "await" only in function which is declared with "async" keyword.
+- await === then
